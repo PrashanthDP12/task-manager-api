@@ -139,12 +139,11 @@ const taskRouter = require("./routers/task");
 const app = express();
 const port = process.env.PORT || 3000;
 
+// App wide Middleware!
 // app.use((req, res, next) => {
-//   res.status(503).send("Sorry folks, Maintenance break, Please try again")
+//   res.status(503).send("Sorry folks, Maintenance break, Please try again");
 //   console.log(req.method, req.path);
-//   next()
 // });
-
 
 app.use(express.json());
 app.use(userRouter);
