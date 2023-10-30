@@ -6,6 +6,10 @@ const multer = require("multer");
 const router = new express.Router();
 const sharp = require("sharp");
 
+router.get("/", (req, res) => {
+  res.send("Welcome to TaskManager API!");
+});
+
 router.post("/users", async (req, res) => {
   const user = new User(req.body);
 
