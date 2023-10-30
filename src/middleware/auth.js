@@ -2,11 +2,7 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/user");
 const dotenv = require("dotenv");
 dotenv.config();
-// This function is to check if token coming in from request is valid or not.
-// In this TaskManager setup, Single user can have multiple tokens if he logined via different devices
-// Here it will check if token from request is from anyone of the valida tokens of that users
-// Note : Tokens are saved in db in this setup.
-// This funtion can be used in middleware when we want to authorise incoming request from user to perform certain action.
+
 const auth = async (req, res, next) => {
   try {
     const token = req.header("Authorization").replace("Bearer ", "");
